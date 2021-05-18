@@ -59,4 +59,16 @@ We have included a small set of training audio files in the wav folder. However,
 Converges when the reconstruction loss is around 0.0001.
 
 
+### 3.Convert waveform to waveform
 
+0.Prepare waveform data in `wavs/` folder.
+
+1.Generate spectrogram data from the wav files: ```python make_spect.py```
+
+2.Generate training metadata, including the GE2E speaker embedding (please use one-hot embeddings if you are not doing zero-shot conversion): ```python make_metadata.py```
+
+3.Run the conversion script: ```python convert.py```
+
+4.Run the vocoder script: ```python vocoder.py```
+
+Result waveforms will be placed in the `wavs/`  folder.
